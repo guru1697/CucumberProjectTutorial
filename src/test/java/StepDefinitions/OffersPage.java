@@ -24,12 +24,13 @@ public class OffersPage {
     public String offersPagePro;
     public String parentWindow;
 
- public LandingPageObject landingPageObject;
+    public LandingPageObject landingPageObject;
 
- public OffersPageObject offersPageObject;
+    public OffersPageObject offersPageObject;
     TestContextSetup testContextSetup;
-    public OffersPage(TestContextSetup testContextSetup){
-        this.testContextSetup = testContextSetup ;
+
+    public OffersPage(TestContextSetup testContextSetup) {
+        this.testContextSetup = testContextSetup;
     }
 
     @Then("User search for same product {string} in offers page to verify if product exist")
@@ -43,8 +44,9 @@ public class OffersPage {
         offersPageObject.verificationInOffersPageForProduct();
         testContextSetup.driver.close();
         testContextSetup.driver.switchTo().window(offersPageObject.parentWindow);
-        testContextSetup.driver.quit();
-
+//        testContextSetup.driver.quit();
+//        Hooks hooks = new Hooks(testContextSetup);
+//        hooks.AfterScenario();
 
     }
 

@@ -1,5 +1,6 @@
 package PageObjects;
 
+import StepDefinitions.Hooks;
 import org.openqa.selenium.WebDriver;
 
 public class PageObjectManager {
@@ -8,16 +9,18 @@ public class PageObjectManager {
 
     public LandingPageObject landingPageObject;
     public OffersPageObject offersPageObject;
+    public Hooks hooks;
 
-    public PageObjectManager(WebDriver driver){
+    public PageObjectManager(WebDriver driver) {
         this.driver = driver;
     }
 
-    public LandingPageObject getLandingPage(WebDriver driver){
+    public LandingPageObject getLandingPage(WebDriver driver) {
         landingPageObject = new LandingPageObject(driver);
         return landingPageObject;
     }
-    public OffersPageObject getOffersPage(WebDriver driver){
+
+    public OffersPageObject getOffersPage(WebDriver driver) {
         offersPageObject = new OffersPageObject(driver);
         return offersPageObject;
     }
